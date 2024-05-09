@@ -5,8 +5,8 @@
 -->
 <template>
   <div style="padding: 24px">
-    <a-button type="primary" @click="reqTest">Request</a-button>
-    <a-button type="primary" @click="busEmit">busEmit</a-button>
+    <el-button type="primary" @click="reqTest">Request</el-button>
+    <el-button type="primary" @click="busEmit">busEmit</el-button>
   </div>
 </template>
 
