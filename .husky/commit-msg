@@ -1,0 +1,9 @@
+###
+ # @Author: ze.wang@diact.com
+ # @Date: 2023-05-09 14:25:35
+ # @Function: Please Input Function
+### 
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx --no-install commitlint --edit "$1"

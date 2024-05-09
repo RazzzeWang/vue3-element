@@ -4,15 +4,27 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "cz": "cz",
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "dependencies": {
     "vue": "^3.4.21"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/prompt-cli": "^19.3.0",
     "@vitejs/plugin-vue": "^5.0.4",
+    "cz-git": "^1.9.1",
+    "husky": "^9.0.11",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6"
