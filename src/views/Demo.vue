@@ -5,7 +5,12 @@
 -->
 <template>
   <div style="padding: 24px">
-    <el-button type="primary" @click="reqTest">Request</el-button>
+    <el-button type="primary" @click="reqTest">
+      <el-icon class="el-icon--left" style="vertical-align: middle">
+        <ele-Search />
+      </el-icon>
+      Request
+    </el-button>
     <el-button type="primary" @click="busEmit">busEmit</el-button>
   </div>
 </template>
