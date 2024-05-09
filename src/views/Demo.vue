@@ -12,20 +12,20 @@
 
 <script setup lang='ts' name=''>
 import exampleApi from '/@/api/demo';
-import eventBus from '/@/utils/eventBus';
+import emitter from '/@/utils/mitt';
 const reqTest = () => {
   exampleApi.test({ p1: '111', p2: 2222 }).then((res) => {
     console.log(res);
   });
 };
-eventBus.once('testEvent', (data) => {
+emitter.on('testEvent', (data) => {
   console.log(data);
 });
 const busEmit = () => {
-  eventBus.emit('testEvent', 111);
+  emitter.emit('testEvent', 111);
 };
 </script>
 
-<style lang='less' scoped>
+<style lang='scss' scoped>
 
 </style>
