@@ -25,7 +25,7 @@
     "noFallthroughCasesInSwitch": true,
 
     // 项目目录、别名配置
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "/@": ["src"],
       "/@/*": ["src/*"]
