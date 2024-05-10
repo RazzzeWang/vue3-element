@@ -9,6 +9,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import path from 'path';
 import qiankun from 'vite-plugin-qiankun';
 import { svgBuilder } from '/@/components/SvgIcon/builder'
+import AutoImport from 'unplugin-auto-import/vite'//按需自动加载API插件
 
 // https://vitejs.dev/config/
 export default defineConfig((mode: ConfigEnv) => {
@@ -20,7 +21,11 @@ export default defineConfig((mode: ConfigEnv) => {
       svgBuilder('./src/assets/icons/'), // 将 SVG 文件转换成 Vue 组件
       qiankun(env.VITE_MICRO_APP_NAME, { // 配置qiankun插件
         useDevMode: true
-      })
+      }),
+      AutoImport({ 
+        imports: ['vue', 'vue-router', 'pinia'], // 自动导入的依赖库数组
+        dts: './auto-imports.d.ts', // 自动导入类型定义文件路径 
+      }),
     ],
     server: {
       host: '0.0.0.0', // 服务器地址

@@ -13,12 +13,15 @@
 		</el-button>
 		<el-button type="primary" @click="busEmit">busEmit</el-button>
 		<SvgIcon name="local-wx-voice" :size="20"></SvgIcon>
+		{{ testRef }}
 	</div>
 </template>
 
 <script setup lang="ts" name="">
 import exampleApi from '/@/api/demo';
 import emitter from '/@/utils/mitt';
+
+const testRef = ref('111');
 const reqTest = () => {
 	exampleApi.test({ p1: '111', p2: 2222 }).then((res) => {
 		console.log(res);
