@@ -12,6 +12,7 @@
 			Request {{ $t('testI18n') }}
 		</el-button>
 		<el-button type="primary" @click="busEmit">busEmit</el-button>
+		<SvgIcon name="local-wx-voice" :size="20"></SvgIcon>
 	</div>
 </template>
 

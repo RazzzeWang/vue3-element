@@ -8,12 +8,16 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import path from 'path';
 import qiankun from 'vite-plugin-qiankun';
+import { svgBuilder } from '/@/components/SvgIcon/builder'
 
 // https://vitejs.dev/config/
 export default defineConfig((mode: ConfigEnv) => {
   const env = loadEnv(mode.mode, process.cwd());
   return {
-    plugins: [vue(), vueJsx(), 
+    plugins: [
+      vue(), 
+      vueJsx(), 
+      svgBuilder('./src/assets/icons/'), // 将 SVG 文件转换成 Vue 组件
       qiankun(env.VITE_MICRO_APP_NAME, { // 配置qiankun插件
         useDevMode: true
       })

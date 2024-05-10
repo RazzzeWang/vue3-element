@@ -13,6 +13,7 @@ import router from '/@/router'
 import pinia from '/@/stores'
 import i18n from '/@/i18n';
 import useSubscribe from '/@/subscribe'
+import SvgIcon from '/@/components/SvgIcon'
 
 // 子应用相关
 import {
@@ -45,6 +46,7 @@ function render() {
   app.use(router)
   app.use(pinia)
   app.use(ElementPlus)
+  app.use(SvgIcon) // SvgIcon
   app.use(i18n) // 国际化
   app.mount(`#${import.meta.env.VITE_MICRO_APP_NAME}`)
 }
