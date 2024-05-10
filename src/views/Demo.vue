@@ -5,13 +5,16 @@
 -->
 <template>
   <div style="padding: 24px">
-    <el-button type="primary" @click="reqTest">
-      <el-icon class="el-icon--left" style="vertical-align: middle">
+    <el-button type="primary"
+               @click="reqTest">
+      <el-icon class="el-icon--left"
+               style="vertical-align: middle">
         <ele-Search />
       </el-icon>
       Request {{ $t('testI18n') }}
     </el-button>
-    <el-button type="primary" @click="busEmit">busEmit</el-button>
+    <el-button type="primary"
+               @click="busEmit">busEmit</el-button>
   </div>
 </template>
 
@@ -19,18 +22,17 @@
 import exampleApi from '/@/api/demo';
 import emitter from '/@/utils/mitt';
 const reqTest = () => {
-  exampleApi.test({ p1: '111', p2: 2222 }).then((res) => {
-    console.log(res);
-  });
+	exampleApi.test({ p1: '111', p2: 2222 }).then((res) => {
+		console.log(res);
+	});
 };
 emitter.on('testEvent', (data) => {
-  console.log(data);
+	console.log(data);
 });
 const busEmit = () => {
-  emitter.emit('testEvent', 111);
+	emitter.emit('testEvent', 111);
 };
 </script>
 
 <style lang='scss' scoped>
-
 </style>
