@@ -5,8 +5,8 @@
  */
 export default [
   {
-    name: 'demo',
-    path: '/demo',
+    name: 'surveyAction',
+    path: '/surveyAction',
     component: () => import('/@/views/Demo.vue'),
   },
 ]

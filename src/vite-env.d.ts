@@ -30,3 +30,8 @@ declare module '*.vue' {
 
 // mockjs模块
 declare module 'mockjs';
+
+// window对象
+interface Window {
+  MicroFrontends: any;
+}

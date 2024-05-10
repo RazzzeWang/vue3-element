@@ -3,12 +3,13 @@
  * @Date: 2024-05-09 15:52:20
  * @Function: Please Input Function
  */
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import routes from './constRoutes';
 import { setupBeforeEach } from './permission';
+import { qiankunWindow } from "vite-plugin-qiankun/dist/helper";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(qiankunWindow.__POWERED_BY_QIANKUN__ ? "/#/MF_action" : '/'),
   routes: routes,
 });
 
