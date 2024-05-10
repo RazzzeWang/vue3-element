@@ -9,7 +9,7 @@ import { setupBeforeEach } from './permission';
 import { qiankunWindow } from "vite-plugin-qiankun/dist/helper";
 
 const router = createRouter({
-  history: createWebHashHistory(qiankunWindow.__POWERED_BY_QIANKUN__ ? "/#/MF_action" : '/'),
+  history: createWebHashHistory(qiankunWindow.__POWERED_BY_QIANKUN__ ? `/#/${import.meta.env.VITE_MICRO_APP_NAME}` : '/'),
   routes: routes,
 });
 

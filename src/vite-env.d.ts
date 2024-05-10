@@ -7,10 +7,12 @@
 
 // 环境变量
 interface ImportMetaEnv {
-  readonly VITE_APP_ROOT: string; // app baseUrl
-  readonly VITE_APP_PUBLIC_PATH: string; // app静态资源路径
-  readonly VITE_APP_API_BASE_URL: string; // api接口地址
+  readonly VITE_PUBLIC_PATH: string; // 前端访问前缀
+  readonly VITE_API_URL: string; // 后端请求前缀
   readonly VITE_MOCK: boolean; // 是否开启mock模式
+  readonly VITE_MICRO_APP_NAME: string; // 微前端子应用名
+  readonly VITE_ADMIN_PROXY_PATH: string; // ADMIN 服务地址
+  readonly VITE_GEN_PROXY_PATH: string; // 代码生成服务地址 (单体架构有效)
 }
 interface ImportMeta {
   readonly env: ImportMetaEnv;

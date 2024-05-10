@@ -43,7 +43,7 @@ function render() {
   app.use(router)
   app.use(pinia)
   app.use(ElementPlus)
-  app.mount('#app2')
+  app.mount(`#${import.meta.env.VITE_MICRO_APP_NAME}`)
 }
 
 renderWithQiankun({
