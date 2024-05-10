@@ -11,6 +11,8 @@ import './style.css'
 import App from './App.vue'
 import router from '/@/router'
 import pinia from '/@/stores'
+import i18n from '/@/i18n';
+import useSubscribe from '/@/subscribe'
 
 // 子应用相关
 import {
@@ -43,6 +45,7 @@ function render() {
   app.use(router)
   app.use(pinia)
   app.use(ElementPlus)
+  app.use(i18n) // 国际化
   app.mount(`#${import.meta.env.VITE_MICRO_APP_NAME}`)
 }
 
@@ -50,19 +53,8 @@ renderWithQiankun({
   mount(props) {
     console.log('renderWithQiankun mount=============')
     render()
-    props.onGlobalStateChange((state: any) => {
-      console.log('子应用接收的参数', state)
-      if (state.type === GLOBAL_STATE.themeColor) {
-        const newPrimaryColor = state.data.primary
-        console.log('主题色改变====', newPrimaryColor)
-        // document.documentElement.style.setProperty('--el-color-primary-dark-2', `${getDarkColor(newPrimaryColor, 0.1)}`);
-        document.documentElement.style.setProperty('--el-color-primary', newPrimaryColor);
-        // 颜色变浅
-        // for (let i = 1; i <= 9; i++) {
-        //   document.documentElement.style.setProperty(`--el-color-primary-light-${i}`, `${getLightColor(newPrimaryColor, i / 10)}`);
-        // }
-      }
-    }, true)
+    // 初始化子应用的事件订阅
+    useSubscribe(props)
   },
   bootstrap() {
     console.log('%c%s', 'color: green;', 'vue3.0 app bootstraped')

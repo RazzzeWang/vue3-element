@@ -9,7 +9,7 @@
       <el-icon class="el-icon--left" style="vertical-align: middle">
         <ele-Search />
       </el-icon>
-      Request
+      Request {{ $t('testI18n') }}
     </el-button>
     <el-button type="primary" @click="busEmit">busEmit</el-button>
   </div>
