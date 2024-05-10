@@ -40,6 +40,8 @@ declare module '*.vue' {
 
 // mockjs模块
 declare module 'mockjs';
+declare module 'js-cookie';
+declare module 'qs';
 
 // window对象
 interface Window {

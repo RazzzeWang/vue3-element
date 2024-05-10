@@ -4,21 +4,18 @@
  * @Function: Please Input Function
 -->
 <template>
-  <div style="padding: 24px">
-    <el-button type="primary"
-               @click="reqTest">
-      <el-icon class="el-icon--left"
-               style="vertical-align: middle">
-        <ele-Search />
-      </el-icon>
-      Request {{ $t('testI18n') }}
-    </el-button>
-    <el-button type="primary"
-               @click="busEmit">busEmit</el-button>
-  </div>
+	<div style="padding: 24px">
+		<el-button type="primary" @click="reqTest">
+			<el-icon class="el-icon--left" style="vertical-align: middle">
+				<ele-Search />
+			</el-icon>
+			Request {{ $t('testI18n') }}
+		</el-button>
+		<el-button type="primary" @click="busEmit">busEmit</el-button>
+	</div>
 </template>
 
-<script setup lang='ts' name=''>
+<script setup lang="ts" name="">
 import exampleApi from '/@/api/demo';
 import emitter from '/@/utils/mitt';
 const reqTest = () => {
@@ -34,5 +31,4 @@ const busEmit = () => {
 };
 </script>
 
-<style lang='scss' scoped>
-</style>
+<style lang="scss" scoped></style>

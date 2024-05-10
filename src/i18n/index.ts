@@ -1,5 +1,11 @@
+/*
+ * @Author: ze.wang@diact.com
+ * @Date: 2024-05-10 15:00:23
+ * @Function: Please Input Function
+ */
 import {createI18n} from 'vue-i18n';
 import { IItemize, ILocale } from './types';
+import { Local } from '/@/utils/storage'
 
 // element plus 自带国际化
 import enLocale from 'element-plus/es/locale/lang/en';
@@ -34,7 +40,7 @@ for (const key in itemize) {
 }
  
 // 导出语言国际化
-const themeConfig = JSON.parse(localStorage.getItem('pigx-ui:themeConfig') || '{}')
+const themeConfig = Local.get('themeConfig')
 
 export const i18n = createI18n({
   legacy: false,
