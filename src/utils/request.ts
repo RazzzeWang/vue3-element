@@ -12,7 +12,7 @@ import qs from 'qs';
  * 创建并配置一个 Axios 实例对象
  */
 const service: AxiosInstance = axios.create({
-	baseURL: import.meta.env.VITE_API_URL,
+	baseURL: import.meta.env.VITE_IS_MICRO === 'true' ? import.meta.env.VITE_API_URL : import.meta.env.VITE_PUBLIC_PATH,
 	timeout: 50000, // 全局超时时间
     paramsSerializer: {
         serialize: (params: any) => {

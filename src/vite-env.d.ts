@@ -42,6 +42,9 @@ declare module '*.vue' {
 declare module 'mockjs';
 declare module 'js-cookie';
 declare module 'qs';
+declare module 'lodash';
+declare module 'numeral';
+declare module 'moment';
 
 // window对象
 interface Window {

@@ -20,7 +20,6 @@
 <script setup lang="ts" name="">
 import exampleApi from '/@/api/demo';
 import emitter from '/@/utils/mitt';
-
 const testRef = ref('111');
 const reqTest = () => {
 	exampleApi.test({ p1: '111', p2: 2222 }).then((res) => {

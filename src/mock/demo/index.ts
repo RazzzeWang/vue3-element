@@ -4,7 +4,9 @@
  * @Function: Please Input Function
  */
 import Mock from 'mockjs';
-Mock.mock('/test', 'post', {
+const baseUrl = import.meta.env.VITE_IS_MICRO === 'true' ? import.meta.env.VITE_API_URL : import.meta.env.VITE_PUBLIC_PATH
+
+Mock.mock(`${baseUrl}/test`, 'post', {
   p1: 'test1',
   p2: 'test2',
 });
